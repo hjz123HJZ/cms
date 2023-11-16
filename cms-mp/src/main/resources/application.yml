@@ -1,0 +1,17 @@
+#\u516C\u5171\u7684\u914D\u7F6E
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/cms?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+    username: cms
+    password: cms
+# \u5F00\u542Fmp\u7684\u65E5\u5FD7\uFF08\u8F93\u51FA\u5230\u63A7\u5236\u53F0\uFF09
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #\u5173\u6389\u8FD9\u4E2A\u7684\u542F\u52A8\u7684\u56FE\u6807
+  global-config:
+    banner: false

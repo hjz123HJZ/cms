@@ -1,0 +1,43 @@
+# 公共的配置
+spring:
+    mvc:
+        pathmatch: #swagger版本太高
+            matching-strategy: ant_path_matcher
+    profiles: #选择开发环境
+        active: dev
+#mybatis:
+#    configuration:
+#        # 开启日志
+#        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#        # 驼峰命名
+#        map-underscore-to-camel-case: true
+#        # 映射文件
+#    mapper-locations: classpath:mapper/*.xml
+#    # 别名
+#    type-aliases-package: com.briup.bean
+
+mybatis-plus:
+    configuration:
+        #开启sql日志
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        # 驼峰命名
+        map-underscore-to-camel-case: true
+    # 映射文件
+    mapper-locations: classpath:mapper/*.xml
+    # 别名
+    type-aliases-package: com.briup.bean
+    global-config:
+        banner: false
+        db-config:
+            id-type: assign_id #所有实体默认采取该规则
+            logic-delete-field: deleted #逻辑删除的字段 更新该字段
+            logic-not-delete-value: 0 # 未删除的值
+
+upload:
+    method: qiniu  #字符含义: local 本地上传 |  qiniu 七牛云上传
+    filePath: D:\IDEA\workplace\cms\cms_core\file  # 本地映射路径
+oss:
+    accessKey: "jQL26FQ6NmEmb72mQk7y2JkKr-XGSk3Oh013mt-O"
+    secretKey: "xIGC3-DXIpki51SV3mob6sTcCZMJyRKrQib8M9pL"
+    bucket: "devilmay"
+    baseUrl: "http://s47gs0pzd.hn-bkt.clouddn.com"
